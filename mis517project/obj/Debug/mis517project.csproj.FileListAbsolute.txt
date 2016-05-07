@@ -1,0 +1,5 @@
+D:\MSIS\MIS 517 client server\Visual Studio 2012\Projects\mis517project\mis517project\bin\mis517project.dll
+D:\MSIS\MIS 517 client server\Visual Studio 2012\Projects\mis517project\mis517project\bin\mis517project.pdb
+D:\MSIS\MIS 517 client server\Visual Studio 2012\Projects\mis517project\mis517project\obj\Debug\mis517project.dll
+D:\MSIS\MIS 517 client server\Visual Studio 2012\Projects\mis517project\mis517project\obj\Debug\mis517project.pdb
+D:\MSIS\MIS 517 client server\Visual Studio 2012\Projects\mis517project\mis517project\obj\Debug\mis517project.csprojResolveAssemblyReference.cache
