@@ -20,21 +20,12 @@ namespace mis517project
         }
 
         // login
-
         protected void Button2_Click(object sender, EventArgs e)
         {
-            // get username from web control
-            String username = TextBox1.Text;
-            String password = TextBox2.Text;
-
+            
             // open the DB connection
-            SqlConnection myConnection = new SqlConnection();
-
-            // set the connection String- MDF sql server
-            myConnection.ConnectionString = WebConfigurationManager.ConnectionStrings["Pubs"].ConnectionString;
-
-
-            // open the DB connection
+            SqlConnection myConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["Pubs"].ConnectionString);
+            
             try
             {
                 myConnection.Open();
@@ -48,8 +39,8 @@ namespace mis517project
 
             // check if user exisit from the DB
 
-            String sqlCmdStr = "select * from logintabletemp where name = '";
-            sqlCmdStr += username + "' ";
+            String sqlCmdStr = "select * from logintbl where id = '";
+            sqlCmdStr += txtUserId.Text + "' ";
 
             SqlCommand myCommand = new SqlCommand(sqlCmdStr, myConnection);
 
@@ -62,15 +53,14 @@ namespace mis517project
 
             if (myReader.Read())
             {
-                if (myReader["password"].ToString().Equals(password))
+                if (myReader["password"].ToString().Equals(txtPassword.Text))
                 {
-                    //Label1.ForeColor = System.Drawing.Color.Black;
-                    //Label1.Text = "username \"" + username + "\" found with password " + myReader["password"].ToString();
+                    Session["instructorename"] = txtUserId.Text;
 
-                    // user exists - then redirect to "Instructor Page"
-                    Session["instructorename"] = username;
-                    Session["dbconnection"] = myConnection;
-                    Response.Redirect("instructor.aspx?Name=" + username);
+                    Label1.ForeColor = System.Drawing.Color.Black;
+                    Label1.Text = "Login Success.";
+
+                    Response.Redirect("instructor.aspx?Name=" + txtUserId.Text);
                 }
                 else
                 {
@@ -82,7 +72,7 @@ namespace mis517project
             else
             {
                 Label1.ForeColor = System.Drawing.Color.Red;
-                Label1.Text = "username \"" + username + "\" not found.";
+                Label1.Text = "User ID \"" + txtUserId.Text + "\" not found.";
             }
 
 

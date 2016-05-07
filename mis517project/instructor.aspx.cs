@@ -17,13 +17,23 @@ namespace mis517project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Text = "Welcome Instructor " + "\"" + Session["instructorename"].ToString() + "\"";
+            // make sure the user first logged in
+            if (null == Session["instructorename"])
+            {
+                Response.Redirect("index.aspx");
+            }
+            else
+            {
+                Label1.Text = "Welcome " + "\"" + Session["instructorename"].ToString() + "\"";
+            }
         }
 
         // signout
         protected void Button2_Click(object sender, EventArgs e)
         {
-            SqlConnection myConnection = (SqlConnection)Session["dbconnection"];
+            // open the DB connection
+            SqlConnection myConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["Pubs"].ConnectionString);
+            
 
             try
             {

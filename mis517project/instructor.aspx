@@ -4,7 +4,12 @@
         <tr>
             <td style="width: 1085px">&nbsp;</td>
             <td>
-                <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Sign out" />
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 1085px"></td>
+            <td>
+                <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Sign Out" />
             </td>
         </tr>
     </table>
@@ -27,7 +32,7 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Student Attendance" />
+                <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="View Student Attendance" />
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -39,7 +44,7 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Student Information" />
+                <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="View Student Information" />
             </td>
             <td>&nbsp;</td>
         </tr>
